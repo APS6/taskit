@@ -1,0 +1,16 @@
+<%= turbo_frame_tag dom_id(task) do %>
+  <div class="bg-black py-2 px-2 w-full rounded-lg flex gap-1 items-center justify-between"> 
+    <% if task.completed %>
+      <span class="line-through"><%= task.body %></span>
+    <% else %>
+      <%= simple_format task.body %>
+    <% end %>
+    <div class="flex gap-2">
+      <% if !task.completed %>
+        <%= link_to "Edit", edit_task_path(task), class: "rounded-lg py-1 px-2 bg-blue-600" %>
+      <% end %>
+      <%= button_to "Done", completed_task_path(task), method: :patch, class: " rounded-lg py-1 px-2 bg-green-700" %>
+      <%= button_to "Delete", task_path(task), method: :delete, class: " rounded-lg py-1 px-2 bg-red-500" %>
+    </div>
+  </div>
+<% end %>

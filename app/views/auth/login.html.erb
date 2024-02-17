@@ -1,0 +1,17 @@
+<div data-turbo="false" class="flex flex-col justify-center h-screen items-center ">
+	<h1 class="text-4xl pb-3">Login</h1>
+
+	<%= form_with url: login_path do |form| %>
+	  <div class="flex flex-col gap-3 items-center">
+		  <div class="flex flex-col">
+		    <%= form.label :email %>
+		    <%= form.text_field :email, placeholder: "john@doe.com", class: "rounded text-black" %>
+		  </div>
+		  <div class="flex flex-col ">
+		    <%= form.label :password %>
+		    <%= form.password_field :password, class: "rounded text-black" %>
+		  </div>
+		  <%= form.submit "Login", class: "py-3 px-6 bg-white text-black rounded-xl cursor-pointer" %>
+		  </div>
+	<% end %>
+</div>

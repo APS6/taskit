@@ -1,0 +1,10 @@
+<div class="">
+  <div class="w-4/5 py-4 max-w-4xl mt-20 bg-zinc-900 px-4 mx-auto flex flex-col gap-4 rounded-2xl"> 
+    <h2 class="self-center text-3xl ">Tasks</h2>
+    <%= render "form", task: @task %>
+    <%= turbo_stream_from "tasks" %>
+      <%= turbo_frame_tag 'tasks', class: " flex flex-col gap-2" do %>
+        <%= render @tasks %>
+      <% end %>
+  </div>
+</div>

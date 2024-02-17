@@ -1,0 +1,15 @@
+<div class="fixed top-0 w-full">
+	<nav class="flex justify-between align-center p-4  max-w-6xl m-auto ">
+		<a href="/"><h3 class="text-3xl">Task<span class="text-purple-500">it</span></h3></a>
+		<ul class="flex align-center gap-4">
+			<% if Current.user %>
+				<li class="text-lg hover:text-purple-200"><%= link_to "My Tasks", tasks_path %></li>
+				<li class="text-lg hover:text-purple-200"><%= button_to "Logout", logout_path, method: :delete %></li>
+
+			<% else %>
+				<li class="text-lg hover:text-purple-200"><%= link_to "Login", user_path %></li>
+				<li class="text-lg hover:text-purple-200"><%= link_to "Sign Up", user_new_path %></li>
+			<% end %>
+		</ul>
+	</nav>
+</div>
